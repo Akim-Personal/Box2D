@@ -34,6 +34,14 @@ struct b2Color
 	{
 		r = rIn; g = gIn; b = bIn; a = aIn;
 	}
+	
+	// Camaro ->
+	unsigned long GetAsDWORD() const
+	{
+		// not exact but good enough for now
+		return 0xff000000 + (int)(r*255)*0xffff + (int)(g*255)*0xff + (int)(b*255);
+	}
+	// <- Camaro
 
 	float32 r, g, b, a;
 };
